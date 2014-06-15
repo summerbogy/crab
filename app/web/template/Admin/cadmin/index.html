@@ -1,0 +1,38 @@
+<{layout:Common/aheader}>
+<div class ="main">
+	<div class="about">
+		<h2>概况</h2>
+		<p>最近您发表了<em>
+			<{$data['artCount']}>编文章</em>，最近有<em><{$data['comCount']}>条评论</em></p>
+	</div>
+	<div class="new">
+		<h3>最近发表文章</h3>
+		<{foreach($data['newArt'] as $art)}>
+		
+		<h4> 	
+			<a href="/?m=Home&c=index&a=readmore&id=<{$art['_id']}>"><{$art['title']}></a>
+			<span style="color:#bcc;font-size:12px;">(<{echo date('m/d', $art['time'])}>)</span>
+		</h4>
+		<{/foreach}>
+	</div>
+	<div class="new">
+		<h3>最近发表文章</h3>
+		<{foreach($data['comments'] as $comment)}>
+		<h4>
+			<a href="/?m=Home&c=index&a=readmore&id=<{$comment['_id']}>"><{$comment['username']}></a>
+			<span style="color:#bcc;font-size:12px;">(<{echo date('m/d', $comment['time'])}>)</span>
+		</h4>
+		<{/foreach}>
+		<a href=""></a>
+	</div>
+	<div class="new">
+		<h3>最近发表文章</h3>
+		<{foreach($data['newArt'] as $art)}>
+		
+		<h4> 	
+			<a href="/?m=Home&c=index&a=readmore&id=<{$art['_id']}>"><{$art['title']}></a>
+			<span style="color:#bcc;font-size:12px;">(<{echo date('m/d', $art['time'])}>)</span>
+		</h4>
+		<{/foreach}>
+	</div>
+</div>

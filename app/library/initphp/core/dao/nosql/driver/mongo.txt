@@ -1,0 +1,98 @@
+/**
+	 * 新增数据
+	 * @param array $data 需要新增的数据 例如：array('title' => '1000', 'username' => 'xcxx')
+	 * @param array $option 参数
+	 */
+	public function insert($data, $option = array()) {
+		return $this->collection->insert($data, $option);
+	}
+	
+	/**
+	 * 批量新增数据
+ 	 * @param array $data 需要新增的数据 例如：array(0=>array('title' => '1000', 'username' => 'xcxx'))
+	 * @param array $option 参数
+	 */
+	public function batchInsert($data, $option = array()) {
+		return $this->collection->batchInsert($data, $option);
+	}
+	
+	/**
+	 * 保存数据，如果已经存在在库中，则更新，不存在，则新增
+ 	 * @param array $data 需要新增的数据 例如：array(0=>array('title' => '1000', 'username' => 'xcxx'))
+	 * @param array $option 参数
+	 */
+	public function save($data, $option = array()) {
+		return $this->collection->save($data, $option);
+	}
+	
+	/**
+	 * 根据条件移除
+ 	 * @param array $query  条件 例如：array(('title' => '1000'))
+	 * @param array $option 参数
+	 */
+	public function remove($query, $option = array()) {
+		return $this->collection->remove($query, $option);
+	}
+	
+	/**
+	 * 根据条件更新数据
+ 	 * @param array $query  条件 例如：array(('title' => '1000'))
+ 	 * @param array $data   需要更新的数据 例如：array(0=>array('title' => '1000', 'username' => 'xcxx'))
+	 * @param array $option 参数
+	 */
+	public function update($query, $data, $option = array()) {
+		return $this->collection->update($query, $data, $option);
+	}
+	
+	/**
+	 * 根据条件查找一条数据
+ 	 * @param array $query  条件 例如：array(('title' => '1000'))
+	 * @param array $fields 参数
+	 */
+	public function findOne($query, $fields = array()) {
+		return $this->collection->findOne($query, $fields);
+	}
+	
+	/**
+	 * 根据条件查找多条数据
+	 * @param array $query 查询条件
+	 * @param array $sort  排序条件 array('age' => -1, 'username' => 1)
+	 * @param int   $limit 页面
+	 * @param int   $limit 查询到的数据条数
+	 * @param array $fields返回的字段
+	 */
+	public function find($query, $sort = array(), $skip = 0, $limit = 0, $fields = array()) {
+		$cursor = $this->collection->find($query, $fields);
+		if ($sort)  $cursor->sort($sort);
+		if ($skip)  $cursor->skip($skip);
+        if ($limit) $cursor->limit($limit);
+		return iterator_to_array($cursor);
+	}
+	
+	/**
+	 * 数据统计
+	 */
+	public function count() {
+		return $this->collection->count();
+	}
+	
+	/**
+	 * 错误信息
+	 */
+	public function error() {
+		return $this->db->lastError();
+	}
+	
+	/**
+	 * 获取集合对象
+	 */
+	public function getCollection() {
+		return $this->collection;
+	}
+	
+	/**
+	 * 获取DB对象
+	 */
+	public function getDb() {
+		return $this->db;
+	}

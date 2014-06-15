@@ -1,0 +1,63 @@
+<div class="content_tab">
+  <ul>
+    <li class="checked" name="<!--{echo $adminlogRun;}-->">后台管理日志</li>
+  </ul>
+</div>
+<div class="content">
+    <h1>后台管理日志列表</h1>
+  <div class="search">
+    <form action="<!--{echo $adminlogRun;}-->" method="post" >
+      <input name="init_token" type="hidden"  value="<!--{echo $init_token;}-->" >
+      <table>
+        <tr>
+          <th width="200">用户名：</td>
+          <td><input name="username" value="<!--{echo $search['username'];}-->" class="input wh150" type="text" /></td>
+        </tr>
+        <tr>
+          <th width="200">开始时间：</td>
+          <td><input name="time_start" value="<!--{echo $search['time_start'];}-->"  class="Wdate" type="text" /></td>
+        </tr>
+        <tr>
+          <th width="200">结束时间：</td>
+          <td><input name="time_end" value="<!--{echo $search['time_end'];}-->"  class="Wdate" type="text" /></td>
+        </tr>
+        <tr>
+          <th width="200"></td>
+          <td><input value="搜&nbsp;索" type="submit" class="btn" /></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <table>
+    <tr>
+      <th width="40">ID</th>
+      <th width="80">用户名</th>
+      <th width="120">IP地址</th>
+      <th width="100">C</th>
+      <th width="100">A</th>
+      <th width="140">创建时间</th>
+      <th width="200">Msg</th>
+      <th width="100">操作</th>
+    </tr>
+    <!--{foreach ($logList as $value) {}-->
+    <tr>
+      <td><!--{echo $value['id'];}--></td>
+      <td><!--{echo $value['username'];}--></td>
+      <td><!--{echo $value['ip'];}--></td>
+      <td><!--{echo $value['controller'];}--></td>
+      <td><!--{echo $value['action'];}--></td>
+      <td><!--{echo date('Y-m-d H:i:s', $value['update_time']);}--></td>
+      <td><!--{echo $value['msg'];}--></td>
+      <td><a href="<!--{echo $adminlogDetail;}-->&id=<!--{echo $value['id'];}-->">[查看详细参数]</a></td>
+    </tr>
+    <!--{}}-->
+    <!--{if ($logCount == 0) {}-->
+    <tr>
+      <td colspan="8">暂时没有任何数据！</td>
+    </tr>
+    <!--{}}-->
+  </table>
+  <div class="page">
+    <!--{echo InitPHP::output($page, 'decode');}-->
+  </div>
+</div>

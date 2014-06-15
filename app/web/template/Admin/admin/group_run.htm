@@ -1,0 +1,35 @@
+<div class="content_tab">
+  <ul>
+    <li class="checked" name="<!--{echo $groupRun;}-->">用户组列表</li>
+    <li name="<!--{echo $groupAdd;}-->">新增用户组</li>
+  </ul>
+</div>
+<div class="content">
+  <h1>用户组列表</h1>
+  <table>
+    <tr>
+      <th width="60">ID</th>
+      <th width="80">用户组名称</th>
+      <th width="200">描述</th>
+      <th width="140">创建时间</th>
+      <th>操作</th>
+    </tr>
+    <!--{foreach ($groupList as $value) {}-->
+    <tr>
+      <td><!--{echo $value['groupid'];}--></td>
+      <td><!--{echo $value['name'];}--></td>
+      <td><!--{echo $value['descrip'];}--></td>
+      <td><!--{echo date('Y-m-d H:i:s', $value['create_time']);}--></td>
+      <td><a href="<!--{echo $groupEdit;}-->&groupid=<!--{echo $value['groupid'];}-->">[编辑]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--{if ($value['if_default'] == 0) {}-->
+        <a href="javascript:del('您真的要删除该用户组？', '<!--{echo $groupDel;}-->', 'groupid=<!--{echo $value['groupid'];}-->&init_token=<!--{echo $init_token;}-->');">[删除]</a>
+        <!--{ } }--></td>
+    </tr>
+    <!--{}}-->
+    <!--{if (count($groupList) == 0) {}-->
+    <tr>
+      <td colspan="6">暂时没有任何数据！</td>
+    </tr>
+    <!--{}}-->
+  </table>
+</div>

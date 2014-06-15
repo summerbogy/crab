@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 登录页面CSS 样式 */
+body {
+	background: url("../../images/admin/bg.png") repeat scroll 0 0 transparent;
+	font-size:12px;
+}
+.login_main {
+   	margin: 150px auto 0;
+    width: 540px;
+}
+.login_title {
+	background: url("../../images/admin/logo.png") no-repeat scroll 0 0 transparent;
+	display: block;
+    height: 100px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    width: 540px;
+}
+.login_form {
+	width:540px;
+	margin-bottom:10px;
+}
+.login_btn {
+	background: url("../../images/admin/btn2.png") no-repeat scroll 0 0 transparent;
+	border: 0 none;
+    float: left;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 85px;
+}
+.login_input {
+	-moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("../../images/admin/input.png") no-repeat scroll 0 0 transparent;
+    border-color: #19313E #3A5867 #3A5867 #19313E;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    float: left;
+    font: bold 16px Arial;
+    margin: 0 15px 0 0;
+    padding: 10px;
+    vertical-align: middle;
+    width: 190px;
+}
+.login_input:focus {
+	background-position:0 -60px;
+}
+.login_msg {
+display:none;
+	float: left;
+    background-color: #FFF5D7;
+    border: 1px solid #19313E;
+    color: #CC0000;
+    height: 25px;
+	line-height:25px;
+	padding-left: 10px;
+	width:300px;
+	margin-top:20px;
+	
+}
+.login_msg_img {
+	float:left;
+	padding-top:5px;
+}
+#login_msg_str {
+	width:270px;
+	float:left;
+	 height: 25px;
+	line-height:26px;
+	margin-left:10px;
+	overflow: hidden;
+}

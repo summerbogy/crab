@@ -1,0 +1,42 @@
+<div class="content_tab">
+  <ul>
+    <li class="checked"  name="<!--{echo $userRun;}-->">管理员列表</li>
+    <li  name="<!--{echo $userAdd;}-->">新增管理员</li>
+  </ul>
+</div>
+<div class="content">
+  <h1>管理员列表</h1>
+  <table>
+    <tr>
+      <th width="60">UID</th>
+      <th width="80">用户名</th>
+      <th width="160">Email</th>
+      <th width="100">用户组</th>
+      <th width="140">创建时间</th>
+      <th width="140">最后登录</th>
+      <th>操作</th>
+    </tr>
+    <!--{foreach ($userList as $value) {}-->
+    <tr>
+      <td><!--{echo $value['uid'];}--></td>
+      <td><!--{echo $value['username'];}--></td>
+      <td><!--{echo $value['email'];}--></td>
+      <td><!--{echo $groupList[$value['groupid']]['name']}--></td>
+      <td><!--{echo date('Y-m-d H:i:s', $value['create_time']);}--></td>
+      <td><!--{echo date('Y-m-d H:i:s', $value['last_time']);}--></td>
+      <td><a href="<!--{echo $userEdit;}-->&uid=<!--{echo $value['uid'];}-->">[编辑]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--{if ($value['uid'] != 1) {}-->
+        <a href="javascript:del('您真的要删除该用户？', '<!--{echo $userDel;}-->', 'uid=<!--{echo $value['uid'];}-->&init_token=<!--{echo $init_token;}-->');">[删除]</a>
+        <!--{}}--></td>
+    </tr>
+    <!--{}}-->
+    <!--{if ($userCount == 0) {}-->
+    <tr>
+      <td colspan="7">暂时没有任何数据！</td>
+    </tr>
+    <!--{}}-->
+  </table>
+  <div class="page">
+    <!--{echo InitPHP::output($page, 'decode');}-->
+  </div>
+</div>

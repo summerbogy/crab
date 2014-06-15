@@ -1,0 +1,19 @@
+@font-face {font-family:
+    'RaphaelIcons';
+    src:
+    url('http://www.crab.cc/static/assets/raphaelicons-webfont.eot');
+    src:
+    local('☺'), url('http://www.crab.cc/static/assets/raphaelicons-webfont.woff') format('woff'), url('http://www.crab.cc/static/assets/raphaelicons-webfont.ttf') format('truetype'), url('http://www.crab.cc/static/assets/raphaelicons-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-weight: normal;
+    font-style: normal;
+    line-height: normal;
+    font-family: 'RaphaelIcons';
+    font-size: 1.1em;
+    position: relative;
+    top: 0.1em;
+}

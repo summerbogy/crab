@@ -1,0 +1,59 @@
+<?php  if (!defined("IS_INITPHP")) exit("Access Denied!");  /* INITPHP Version 1.0 ,Create on 2014-06-13 17:01:23, compiled from app/web/template/Common/aheader.html */ ?>
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+ <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>后台管理</title>
+	<link href="static/style/common.css" rel="stylesheet" type="text/css">
+	<link href="static/style/Ucenter.css" rel="stylesheet" type="text/css">	
+	<link href="static/style/tabs.css" rel="stylesheet" type="text/css">	
+	<link href="static/assets/raphaelicons.css" rel="stylesheet" type="text/css">
+	<script src="static/js/jquery.js" type="text/javascript"></script>
+	<script src="static/js/prefixfree.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div id="top-u">
+	<ul>
+		<li ><span class="icon nav">`</span>
+			<div class="navlist">
+				<span><a href="/?m=Ucenter&c=uhome&a=general">概况</a></span>
+				<span><a href="/?m=Ucenter&c=uhome&a=modifyInfo">修改资料</a></span>
+				<span><a href="/?m=Ucenter&c=uhome&a=modifyInfo">访客</a></span>
+			</div>
+		</li>
+		<li><span class="icon nav">></span>
+			<div class="navlist">
+				<span><a href="/?m=Ucenter&c=uhome&a=addArt">写文章</a></span>
+				<span><a href="/?m=Ucenter&c=uhome&a=addmblog">写轻博</a></span>
+			</div>
+		</li>
+		<li ><span class="icon nav">a</span>
+			<div class="navlist">
+				<span><a href="/?m=Ucenter&c=uhome&a=artManage">文章</a></span>
+				<span><a href="/?m=Ucenter&c=uhome&a=specialPage">专题</a></span>
+				<span><a href="/?m=Ucenter&c=uhome&a=">文件</a></span>
+				<span><a href="/?m=Ucenter&c=uhome&a=">专题</a></span>
+			</div>
+		</li>
+		<li><span class="icon nav">r</span>
+			<div class="navlist">
+				<span>1</span>
+				<span>1</span><span>1</span>
+			</div>
+		</li>
+	</ul>
+
+<script type="text/javascript">
+	$(function(){
+		var nav = $('.nav');
+		nav.hover(function(){
+			$(this).next().slideDown();
+		},	function (){
+			nav.next().mouseleave(function (){
+			$('.navlist').slideUp();});	
+		});
+	});
+</script>
+</div>
+<?php include('app/web/template_c/Common/afooter.tpl.php'); ?>

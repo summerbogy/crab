@@ -1,0 +1,12 @@
+.contentw section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+section .context{	
+	position:relative;
+	float:left;
+	margin-left:20px;
+	width:93%;
+}
+	

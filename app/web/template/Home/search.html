@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>bogy</title>
+	<link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.10.2.js"></script>
+	<link href="static/assets/raphaelicons.css" rel="stylesheet">
+	<!-- portfolio css file -->
+	<link rel="stylesheet" href="static/style/styles.css" />
+	<link href="static/style/common.css" rel="stylesheet" type="text/css">
+	<!--link href="static/style/Home.css" rel="stylesheet" type="text/css">
+	<!--script src="static/js/dialog.js" type="text/javascript"></script-->
+	
+	<script src="static/js/jquery.js" type="text/javascript"></script>
+	<style type="text/css">
+		body{
+			color:#666;
+		}
+	</style>
+</head>
+<body>
+<{layout:Common/lmenu}>
+<{layout:Common/header}>
+
+<div class="sidebar2">
+	<div class="userinfo">
+		<h4>关键词&nbsp;：&nbsp;（<{$data['keyword']}>）</h4>
+		<p>有<{$data['visitInfo']['actNum']}>人，搜索了（<{$data['keyword']}>）</p>
+		<p>您是第<{$data['visitInfo']['visitnum']}>位访客搜索了（<{$data['keyword']}>）相关信息</p>
+	</div>
+	
+
+</div>
+<div class="contentw">
+	<div class="header"><span class="icon">;</span><span1><{$data['keyword']}>相关搜索列表</span1></div>
+	
+	<div class="vline"></div>
+	<{foreach($data['search'] as $search)}>
+	<div class="context">
+		<div class="avatar"><img src="static/images/thumb/usericon.jpg"/></div>
+		<div class="more">
+			<span class="icon">F</span><span1><{$search['title']}></span1>
+			<span1 style="float:right"> <{$search['time']}></span1><span class="icon" style="float:right">É</span>
+			
+		</div>	
+		<div class="textwrap">
+			<p><{$search['content']}>	</p>		
+		</div>
+		<div class="more">
+		<span class="icon">L</span><span1 ><{$search['author']}></span1>
+		
+		<a href="#"><span class="icon">J</span><span1>阅读: <{$search['clicknum']}> </span1></a>
+		<a href="#"><span class="icon">[</span><span1>评论 <{$search['comment']}>:10</span1></a>
+		<a href="#"><span class="icon">y</span><span1>标签：<{$search['keyword']}></span1></a>
+		</div>	
+	</div>
+	<{/foreach}>
+</div>
+
+</body>
+</html>
